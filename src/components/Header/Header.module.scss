@@ -1,0 +1,46 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 40px;
+    padding: 10px 20px;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    color: #333;
+}
+
+.header__nav {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    width: 100%;
+}
+
+.header__title, .header__subtitle {
+    display: flex;
+    gap: 15px;
+}
+
+.header__title {
+   font-weight: bold;
+}
+
+.header__icons {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    margin-left: auto;
+}
+
+.header__menu img, .header__user img {
+    width: 24px;
+    height: 24px;
+}
+
+.header__menu img {
+    fill: #333;
+}
+
+.header__user img {
+    border-radius: 50%;
+}

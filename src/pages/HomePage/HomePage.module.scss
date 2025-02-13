@@ -1,0 +1,19 @@
+.homePage {
+    display: flex;
+    flex-direction: column;
+    min-height: calc(100vh - 40px);
+    justify-content: flex-start;
+}
+
+.homePage__logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+}
+
+.homePage__logo img {
+    width: 300px;
+    height: auto;
+    padding-bottom: 15%;
+}
