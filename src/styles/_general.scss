@@ -1,0 +1,19 @@
+@use './variables' as *;
+@use './mixins' as *;
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    @include family-text;
+    color: $black;
+    background-color: $white;
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}

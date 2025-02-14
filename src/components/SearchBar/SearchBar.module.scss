@@ -1,0 +1,58 @@
+@use '../../styles/variables' as *;
+@use '../../styles/mixins' as *;
+
+.searchBar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-grow: 1;
+    padding: 20px 0;
+}
+
+.searchBar__inputWrapper {
+    position: relative;
+}
+
+.searchBar__searchIcon {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: $grey;
+}
+
+.searchBar__input {
+    width: 400px;
+    height: 40px;
+    padding: 10px 10px 10px 40px;
+    border-radius: 20px;
+    border: 1px solid #ccc;
+    @include font-size(16px);
+    font-family: Arial, sans-serif;
+
+    &:focus-visible {
+        outline: none;
+    }
+}
+
+.searchBar__clearIcon {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: $grey;
+}
+
+.searchBar__button {
+    margin-top: 10px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 20px;
+    @include font-size(16px);
+    cursor: pointer;
+
+    &:hover {
+        background-color: #f1f1f1;
+    }
+}

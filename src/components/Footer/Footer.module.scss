@@ -1,12 +1,13 @@
+@use '../../styles/variables' as *;
+@use '../../styles/mixins' as *;
+
 .footer {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 40px;
+    height: $footer-height;
     padding: 10px 20px;
-    font-family: Arial, sans-serif;
-    font-size: 14px;
-    color: #333;
+    @include font-size(14px);
 }
 
 .footer__left {

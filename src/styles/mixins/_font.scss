@@ -1,0 +1,17 @@
+@use 'sass:math';
+@use '../variables' as *;
+
+@function calculate-rem($size) {
+    $rem-base: 16px;
+    @return math.div($size, $rem-base) + rem;
+}
+
+@mixin font-size($size) {
+    font-size: calculate-rem($size);
+}
+
+@mixin family-text {
+    font: {
+        family: $font-family;
+    };
+}

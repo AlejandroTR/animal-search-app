@@ -1,8 +1,8 @@
 import { FunctionComponent } from "react";
 
-import styles from "./Header.module.scss";
-import MenuIcon from "../../assets/icons/menu.svg";
+import MenuIcon from "../../assets/icons/menu.svg?react";
 import UserIcon from "../../assets/icons/user.jpg";
+import styles from "./Header.module.scss";
 
 const Header: FunctionComponent<any> = () => (
   <header className={styles.header}>
@@ -11,7 +11,7 @@ const Header: FunctionComponent<any> = () => (
       <div className={styles.header__subtitle}>Frontend test</div>
       <div className={styles.header__icons}>
         <div className={styles.header__menu}>
-          <img src={MenuIcon} alt="Menu Icon" />
+          <MenuIcon width="24" height="24" />
         </div>
         <div className={styles.header__user}>
           <img src={UserIcon} alt="User Icon" />
