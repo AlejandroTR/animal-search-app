@@ -1,10 +1,8 @@
-import { FunctionComponent } from "react";
-
 import MenuIcon from "../../assets/icons/menu.svg?react";
 import UserIcon from "../../assets/icons/user.jpg";
 import styles from "./Header.module.scss";
 
-const Header: FunctionComponent<any> = () => (
+const Header = () => (
   <header className={styles.header}>
     <nav className={styles.header__nav}>
       <div className={styles.header__title}>Agile Content</div>

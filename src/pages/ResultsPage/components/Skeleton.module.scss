@@ -1,0 +1,48 @@
+@use '../../../styles/variables' as *;
+
+.skeleton {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.skeleton__item {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.skeleton__url,
+.skeleton__title,
+.skeleton__description {
+    background-color: $grey-light;
+    width: 100%;
+    animation: skeleton-loading 1.5s infinite ease-in-out;
+}
+
+.skeleton__url {
+    height: 16px;
+    max-width: 150px;
+}
+
+.skeleton__title {
+    height: 25px;
+    max-width: 400px;
+}
+
+.skeleton__description {
+    height: 16px;
+    max-width: 600px;
+}
+
+@keyframes skeleton-loading {
+    0% {
+        opacity: 0.6;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0.6;
+    }
+}

@@ -1,0 +1,36 @@
+@use '../../styles/variables' as *;
+@use '../../styles/mixins' as *;
+
+.notFound {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    text-align: center;
+    padding: 20px;
+}
+
+.notFound__title {
+    @include font-size(32px);
+    color: $red;
+    margin-bottom: 10px;
+}
+
+.notFound__message {
+    @include font-size(20px);
+    margin-bottom: 20px;
+}
+
+.notFound__button {
+    margin-top: 30px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 2px;
+    @include font-size(16px);
+    cursor: pointer;
+
+    &:hover {
+        background-color: #f1f1f1;
+    }
+}

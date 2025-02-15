@@ -1,23 +1,35 @@
-import React, { useState } from "react";
+import React from "react";
+import { useNavigate } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
 
+import {
+  clearQuery,
+  selectSearch,
+  setQuery,
+} from "../../store/search/searchSlice.ts";
 import SearchIcon from "../../assets/icons/search.svg?react";
 import CloseIcon from "../../assets/icons/close.svg?react";
 import styles from "./SearchBar.module.scss";
 
 const SearchBar = () => {
-  const [query, setQuery] = useState("");
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
+
+  const query = useSelector(selectSearch);
 
   const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setQuery(event.target.value);
+    dispatch(setQuery(event.target.value));
   };
 
   const handleSearch = (event: React.FormEvent) => {
     event.preventDefault();
-    console.log("Buscando:", query);
+    if (query.trim()) {
+      navigate("/resultsSearch");
+    }
   };
 
   const handleClear = () => {
-    setQuery("");
+    dispatch(clearQuery());
   };
 
   return (

@@ -7,6 +7,7 @@
     align-items: center;
     height: $footer-height;
     padding: 10px 20px;
+    background-color: $grey-light;
     @include font-size(14px);
 }
 
