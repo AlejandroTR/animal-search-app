@@ -18,19 +18,21 @@
     width: 100%;
 }
 
-.header__title, .header__subtitle {
+.header__left {
     display: flex;
+    align-items: center;
     gap: 15px;
+    flex-grow: 1;
 }
 
 .header__title {
-   font-weight: bold;
+    font-weight: bold;
 }
 
-.header__icons {
+.header__right {
     display: flex;
-    gap: 20px;
     align-items: center;
+    gap: 20px;
     margin-left: auto;
 }
 

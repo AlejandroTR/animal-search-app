@@ -2,17 +2,19 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
 import { AppDispatch, RootState } from "../../store/store";
-
-import Header from "../../components/Header/Header.tsx";
-
-import styles from "./ResultsSearch.module.scss";
 import {
   getAnimals,
   selectAnimals,
   selectLoading,
 } from "../../store/animal/animalSlice.ts";
-import Skeleton from "./components/Skeleton.tsx";
+
 import Footer from "../../components/Footer/Footer.tsx";
+import Header from "../../components/Header/Header.tsx";
+import SearchBar from "../../components/SearchBar/SearchBar.tsx";
+import Skeleton from "./components/Skeleton.tsx";
+
+import googleLogo from "/google.svg";
+import styles from "./ResultsSearch.module.scss";
 
 const ResultsPage = () => {
   const query = useSelector((state: RootState) => state.search.query);
@@ -29,7 +31,16 @@ const ResultsPage = () => {
 
   return (
     <>
-      <Header />
+      <Header
+        leftContent={
+          <>
+            <div className={styles.resultsSearch__logo}>
+              <img src={googleLogo} alt="Google logo" />
+            </div>
+            <SearchBar variant="header" />
+          </>
+        }
+      />
       <div className={styles.resultsSearch}>
         <div className={styles.resultsSearch__container}>
           <div className={styles.resultsSearch__list}>

@@ -7,7 +7,15 @@
     align-items: flex-start;
     min-height: 100vh;
     padding: 20px;
-    margin: 0 200px;
+    margin: 0 100px;
+}
+
+.resultsSearch__logo {
+    height: 40px;
+}
+
+.resultsSearch__logo img {
+    height: 100%;
 }
 
 .resultsSearch__container {

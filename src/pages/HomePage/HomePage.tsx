@@ -10,7 +10,7 @@ const HomePage = () => (
   <div className={styles.homePage}>
     <Header />
     <div className={styles.homePage__logo}>
-      <img src={googleLogo} alt="Vite logo" />
+      <img src={googleLogo} alt="Google logo" />
     </div>
     <SearchBar />
     <Footer />
