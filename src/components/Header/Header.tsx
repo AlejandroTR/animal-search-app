@@ -28,7 +28,7 @@ const Header = ({ leftContent, rightContent }: HeaderProps) => (
         ) : (
           <>
             <div className={styles.header__menu}>
-              <MenuIcon width="24" height="24" />
+              <MenuIcon width="24" height="24" data-testid="menu-icon" />
             </div>
             <div className={styles.header__user}>
               <img src={UserIcon} alt="User Icon" />

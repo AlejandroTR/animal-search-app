@@ -44,11 +44,11 @@ const ResultsPage = () => {
       <div className={styles.resultsSearch}>
         <div className={styles.resultsSearch__container}>
           <div className={styles.resultsSearch__list}>
-            <ul>
-              {loading ? (
-                <Skeleton />
-              ) : (
-                animals.map((animal) => (
+            {loading ? (
+              <Skeleton />
+            ) : query && animals.length > 0 ? (
+              <ul>
+                {animals.map((animal) => (
                   <li key={animal.id} className={styles.resultsSearch__item}>
                     <span className={styles.resultsSearch__url}>
                       {animal.url}
@@ -63,10 +63,27 @@ const ResultsPage = () => {
                       {animal.description}
                     </span>
                   </li>
-                ))
-              )}
-            </ul>
-            {/*<div className={styles.resultsSearch__preview}></div>*/}
+                ))}
+              </ul>
+            ) : (
+              <div className={styles.resultsSearch__empty}>
+                {query && (
+                  <p>
+                    No results found for{" "}
+                    <span className={styles.resultsSearch__highlight}>
+                      '{query}'
+                    </span>
+                  </p>
+                )}
+                <p>
+                  Try looking for:{" "}
+                  <span className={styles.resultsSearch__highlight}>
+                    insect, fish, horse, crocodilia, bear, cetacean, cow, lion,
+                    rabbit, cat, snake, dog, bird
+                  </span>
+                </p>
+              </div>
+            )}
           </div>
         </div>
       </div>

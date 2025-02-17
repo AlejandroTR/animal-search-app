@@ -27,18 +27,18 @@ const SearchBar = ({ variant = "home" }: SearchProps) => {
 
   const handleSearch = (event: React.FormEvent) => {
     event.preventDefault();
-    if (search && search.trim()) {
-      dispatch(setQuery(search));
-      navigate("/resultsSearch");
-    }
+    dispatch(setQuery(search.trim()));
+    navigate("/resultsSearch");
   };
 
   const handleClear = () => {
+    setSearch("");
     dispatch(clearQuery());
   };
 
   return (
     <form
+      role="searchbar"
       onSubmit={handleSearch}
       className={`${styles.searchBar} ${variant === "header" ? styles.searchBar__header : ""}`}
     >
@@ -60,6 +60,7 @@ const SearchBar = ({ variant = "home" }: SearchProps) => {
             width="24"
             height="24"
             onClick={handleClear}
+            data-testid="close-icon"
           />
         )}
       </div>

@@ -26,23 +26,7 @@
 }
 
 .resultsSearch__list {
-    max-width: 600px;
-}
-
-.resultsSearch__preview {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-left: 1px solid #ddd;
-    padding-left: 20px;
-    min-height: 300px;
-
-    img {
-        max-width: 100%;
-        max-height: 300px;
-        border-radius: 10px;
-        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-    }
+    max-width: 800px;
 }
 
 .resultsSearch__item {
@@ -77,3 +61,27 @@
     color: $grey;
 }
 
+.resultsSearch__preview {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-left: 1px solid #ddd;
+    padding-left: 20px;
+    min-height: 300px;
+
+    img {
+        max-width: 100%;
+        max-height: 300px;
+        border-radius: 10px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    }
+}
+
+.resultsSearch__empty {
+    @include font-size(14px);
+    color: $grey;
+}
+
+.resultsSearch__highlight {
+    font-weight: bold;
+}
