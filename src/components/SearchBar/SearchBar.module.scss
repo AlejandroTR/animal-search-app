@@ -68,8 +68,4 @@
     border-radius: 2px;
     @include font-size(16px);
     cursor: pointer;
-
-    &:hover {
-        background-color: #f1f1f1;
-    }
 }

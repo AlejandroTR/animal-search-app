@@ -12,10 +12,10 @@ interface HeaderProps {
 const Header = ({ leftContent, rightContent }: HeaderProps) => (
   <header className={styles.header}>
     <nav className={styles.header__nav}>
-      <div className={styles.header__left}>
-        {leftContent ? (
-          leftContent
-        ) : (
+      <div
+        className={`${styles.header__left} ${leftContent ? styles.header__leftColumn : ""}`}
+      >
+        {leftContent || (
           <>
             <div className={styles.header__title}>Agile Content</div>
             <div className={styles.header__subtitle}>Frontend test</div>
@@ -23,9 +23,7 @@ const Header = ({ leftContent, rightContent }: HeaderProps) => (
         )}
       </div>
       <div className={styles.header__right}>
-        {rightContent ? (
-          rightContent
-        ) : (
+        {rightContent || (
           <>
             <div className={styles.header__menu}>
               <MenuIcon width="24" height="24" data-testid="menu-icon" />
