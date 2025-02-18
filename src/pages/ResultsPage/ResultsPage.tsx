@@ -29,11 +29,15 @@ const ResultsPage = () => {
   useEffect(() => {
     if (query) {
       dispatch(getAnimals(query));
+    } else {
+      setSelectedAnimal(null);
     }
   }, [query, dispatch]);
 
   useEffect(() => {
-    if (selectedAnimal) {
+    const isMobile = window.innerWidth < 768;
+
+    if (selectedAnimal && isMobile) {
       document.body.style.overflow = "hidden";
     } else {
       document.body.style.overflow = "auto";
@@ -121,7 +125,7 @@ const RenderResults = ({
 }: RenderResultsProps) => {
   if (query && animals.length > 0) {
     return (
-      <ul>
+      <ul className={styles.resultsSearch__items}>
         {animals.map((animal) => (
           <li
             key={animal.id}
